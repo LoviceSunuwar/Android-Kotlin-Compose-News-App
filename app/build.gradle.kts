@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -54,8 +56,8 @@ dependencies {
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.manifest)
     implementation(Dependencies.activityCompose)
-    implementation(Dependencies.composeBom)
-    implementation(Dependencies.composeBomTest)
+    implementation(platform(Dependencies.composeBom))
+    implementation(platform(Dependencies.composeBomTest))
     implementation(Dependencies.composeTestJUnit)
     implementation(Dependencies.composeUI)
     implementation(Dependencies.composeUIGraphics)
@@ -66,4 +68,14 @@ dependencies {
     implementation(Dependencies.composeUITooling)
     implementation(Dependencies.material)
     implementation(Dependencies.lifecycleRunTime)
+
+    implementation(project(Modules.utiities))
+
+    implementation(Dependencies.hiltAndroid)
+    kapt(Dependencies.hiltAndroidCompiler)
+    kapt(Dependencies.hiltCompiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }

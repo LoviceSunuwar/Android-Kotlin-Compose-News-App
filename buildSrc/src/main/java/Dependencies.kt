@@ -3,8 +3,8 @@ object Dependencies {
 
     //  implementation{"androidx.core:core-ktx:1.9.0"}
 
-    val coreKtx by lazy {"androidx.core:core-ktx:${Versions.coreKtx}"}
-
+  val coreKtx by lazy {"androidx.core:core-ktx:${Versions.coreKtx}"}
+  val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}"}
   val lifecycleRunTime by lazy {"androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"}
   val activityCompose by lazy{"androidx.activity:activity-compose:${Versions.activityCompose}"}
   val composeBom by lazy {"androidx.compose:compose-bom:${Versions.composeBom}"}
@@ -19,4 +19,13 @@ object Dependencies {
   val composeUITest by lazy {"androidx.compose.ui:ui-test-junit4"}
   val composeUITooling by lazy {"androidx.compose.ui:ui-tooling"}
   val manifest by lazy {"androidx.compose.ui:ui-test-manifest"}
+  val androidMaterial by lazy { "com.google.android.material:${Versions.androidMaterial}" }
+
+  val hiltAndroid by lazy { "com.google.dagger:hilt-android:${Versions.hilt}"}
+  val hiltAndroidCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Versions.hilt}"}
+  val hiltCompiler by lazy { "androidx.hilt:hilt-compiler:${Versions.hiltCompiler}"}
+}
+
+object Modules {
+  const val utiities = ":utilities"
 }

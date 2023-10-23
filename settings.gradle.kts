@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Kotlin Compose New App"
 include(":app")
- 
+include(":utilities")
