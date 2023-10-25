@@ -32,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -66,14 +66,17 @@ dependencies {
     implementation(Dependencies.composeUIToolingPreview)
     implementation(Dependencies.esperessoCore)
     implementation(Dependencies.composeUITooling)
-    implementation(Dependencies.material)
+    implementation(Dependencies.material3)
     implementation(Dependencies.lifecycleRunTime)
 
     implementation(project(Modules.utiities))
 
     implementation(Dependencies.hiltAndroid)
+    implementation("androidx.navigation:navigation-runtime-ktx:2.7.4")
     kapt(Dependencies.hiltAndroidCompiler)
     kapt(Dependencies.hiltCompiler)
+
+    implementation(Dependencies.hiltNavigationCompose)
 }
 
 kapt {

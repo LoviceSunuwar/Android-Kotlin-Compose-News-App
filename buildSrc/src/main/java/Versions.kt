@@ -1,16 +1,16 @@
 object Versions {
-    const val coreKtx = "1.9.0"
+    const val coreKtx = "1.10.0"
     const val lifecycleRuntimeKtx = "2.6.1"
     const val activityCompose = "1.7.0"
     const val composeBom = "2023.03.00"
-    const val material = "material3"
     const val jUnit1  = "1.1.5"
     const val jUnit4 = "4.13.2"
     const val espressoCore  = "3.5.1"
     const val appCompat = "1.6.1"
-    const val androidMaterial = "1.8.0"
+    const val material = "1.8.0"
     const val hilt = "2.48"
     const val hiltCompiler = "1.0.0-alpha01"
+    const val hiltNavigationCompose = "1.0.0"
 //    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 //    implementation("androidx.activity:activity-compose:1.7.0")
 //    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
