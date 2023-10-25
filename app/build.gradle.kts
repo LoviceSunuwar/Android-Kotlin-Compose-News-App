@@ -75,8 +75,15 @@ dependencies {
     implementation("androidx.navigation:navigation-runtime-ktx:2.7.4")
     kapt(Dependencies.hiltAndroidCompiler)
     kapt(Dependencies.hiltCompiler)
-
     implementation(Dependencies.hiltNavigationCompose)
+
+
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.okhttp)
+    implementation(Dependencies.moshi)
+    implementation(Dependencies.moshiConverter)
+    implementation(Dependencies.gsonConverter)
+    implementation(Dependencies.loggingInterceptor)
 }
 
 kapt {
