@@ -90,6 +90,8 @@ dependencies {
     implementation(Dependencies.coroutinesCore)
 
     implementation(Dependencies.splashScreen)
+
+    implementation(Dependencies.coil)
 }
 
 kapt {
