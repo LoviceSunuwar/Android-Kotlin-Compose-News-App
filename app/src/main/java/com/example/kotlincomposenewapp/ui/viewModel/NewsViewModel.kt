@@ -1,11 +1,11 @@
 package com.example.kotlincomposenewapp.ui.viewModel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.kotlincomposenewapp.data.AppConstants
 import com.example.kotlincomposenewapp.data.entity.NewsResponse
 import com.example.kotlincomposenewapp.ui.repository.NewsRepo
-import com.example.utilities.ResourceState
+import com.example.utilities.StateResource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,29 +20,21 @@ class NewsViewModel @Inject constructor(
     private val newsRepo: NewsRepo
 ) : ViewModel() {
 
-    private val _news : MutableStateFlow<ResourceState<NewsResponse>> = MutableStateFlow(ResourceState.Loading())
-    val news : StateFlow<ResourceState<NewsResponse>> = _news // Stateflow makes the value static
+    private val _news: MutableStateFlow<StateResource<NewsResponse>> =
+        MutableStateFlow(StateResource.Loading())
+
+
+    val news: StateFlow<StateResource<NewsResponse>> = _news // Stateflow makes the value static
+    init {
+        getNews(AppConstants.COUNTRY)
+    }
     fun getNews(country: String){
-        // Background thread for the api calll
-        viewModelScope.launch (Dispatchers.IO  ){
+        // Background thread for the api call
+        viewModelScope.launch (Dispatchers.IO){
             newsRepo.getNewsHeadline(country)
                 .collectLatest { newsResponse ->
                     _news.value = newsResponse
-
                 }
         }
     }
-    init {
-        Log.d(TAG, "Init block of NewsViewModel")
-    }
-
-    fun doSomething(){
-        println("do something")
-    }
-
-    companion object{
-        const val TAG = "NewsViewModel"
-    }
-
-
 }

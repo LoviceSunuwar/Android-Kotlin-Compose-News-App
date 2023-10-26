@@ -14,6 +14,7 @@ interface ApiService {
 
 
 }
+//GET https://newsapi.org/v2/top-headlines?country=us&apiKey=API_KEY
 
 //GET https://newsapi.org/v2/everything?q=Apple&from=2023-10-25&sortBy=popularity&apiKey=API_KEY
 //e8f59402e82d4590b2c73eda2f4644a2

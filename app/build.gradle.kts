@@ -84,10 +84,12 @@ dependencies {
     implementation(Dependencies.moshiConverter)
     implementation(Dependencies.gsonConverter)
     implementation(Dependencies.loggingInterceptor)
-    
+
 
     implementation(Dependencies.coroutinesAndroid)
     implementation(Dependencies.coroutinesCore)
+
+    implementation(Dependencies.splashScreen)
 }
 
 kapt {
